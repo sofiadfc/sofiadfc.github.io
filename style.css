@@ -1,58 +1,56 @@
-/*Configuro las generalidades de la página*/
 * {
-    box-sizing: border-box;
-    margin: 0%;
+    margin: 0;
     scroll-behavior: smooth;
 }
 
-/*Asigno un color de fondo a la página*/
 body {
     background-color: antiquewhite;
 }
 
-/*Estilizo el cabezal y sus respectivos elementos (título h1 e imagen)*/
-.header {
-    align-items: center;
-    padding: 1% 5%;
-    display: flex;
-    justify-content: space-between;
+.topnav {
+    overflow: hidden;
     background-color: #d30058;
 }
-
-#name{
+  
+.topnav a {
+    float: left;
+    display: block;
     color: antiquewhite;
-    font-family: Georgia, 'Times New Roman', Times, serif;    
-}
-
-header img{
-    block-size: 2rem;
-    filter: invert(90%) sepia() brightness(90%);
-}
-
-/*Estilizo la barra de navegación y sus links*/
-.topnav {
-    padding: 1% 5%;
-    overflow: hidden;
-    display: flex;
-    background-color: #ff006a41;
-    font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-}
-
-.topnav a {
-    padding-right: 3%;
-    color: #d30058;
+    text-align: center;
+    padding: 1% 5%;
     text-decoration: none;
+    font-size: large;
 }
 
-/*Estilizo los párrafos, que son el cuerpo de la página*/
+.topnav .icon {
+  display: none;
+}
+
+#name {
+    justify-content: space-between;
+    display:flex;
+    background-color: #f2bbbd;
+    color: #d30058;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 1.5% 5%;
+}
+
+#name img {
+    padding-right: 5%;
+    block-size: 2rem;
+    filter: invert(100%) brightness(100%);
+}
+
 section > div {
     margin: 5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 section > div > h1 {
+    color: #d30058;
     padding-bottom: 1%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -81,29 +79,79 @@ section > div > h1 {
       }
 }
 
-/*Estilizo el pie de página y sus elementos respectivos (imágenes y links)*/
 footer {
     padding: 1% 5%;
     background-color: #d30058;
 }
 
-footer > * {
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0% 1%;
-    display: flex;
-}
-
 footer a {
+    padding: 0% 3%;
+    display: inline-flex;
+    justify-content: center ;
+    align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-    font-size: medium;
+    font-size: large;
     color: antiquewhite;
     text-decoration: none;
 }
 
 footer img {
-    padding: 0.5% 1%;
+    padding-right: 10%;
     filter: invert(90%) sepia() brightness(90%);
-    block-size: 2rem;
+    block-size: 1.3rem;
+}
+
+@media screen and (max-width: 500px) {
+    .top {
+        position: sticky;
+        top: 0;
+    }
+    .topnav :not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+    footer {padding: 3%}
+    footer a {
+        display: list-item;
+        list-style-type: none;
+    }
+    footer img {padding-right: 3%;}
+    #sobremi img {
+        display: block;
+        float: none;
+        width: 100%;
+        padding: 5% 0%;
+    }
+    #proyectos .img-container {width: 100%; padding: 2.5% 0%;}
+    #name {
+        padding: 3% 5%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .top {
+        position: sticky;
+        top: 0;
+    }
+    .topnav :not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+}  
+
+@media screen and (max-width: 700px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a{
+      float: none;
+      display: block;
+      text-align: left;
+    }
 }
